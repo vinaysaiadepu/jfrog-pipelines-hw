@@ -1,4 +1,3 @@
-		
 pipelines:
   - name: pipeline_hello_world
     configuration:
