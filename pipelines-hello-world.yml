@@ -24,3 +24,34 @@ pipelines:
             - echo "Running " $pipeline_name "|" $step_name
             - sleep 60s
             - echo $MY_MESSAGE
+
+      - name: step_2
+        type: Bash
+        configuration:
+          inputSteps:
+            - name: step_1
+        execution:
+          onExecute:
+            - echo "Running " $pipeline_name "|" $step_name
+            - echo $MY_MESSAGE
+
+      - name: step_3
+        type: Bash
+        configuration:
+          inputSteps:
+            - name: step_1
+        execution:
+          onExecute:
+            - echo "Running " $pipeline_name "|" $step_name
+            - echo $MY_MESSAGE
+
+      - name: step_4
+        type: Bash
+        configuration:
+          inputSteps:
+            - name: step_2
+            - name: step_3
+        execution:
+          onExecute:
+            - echo "Running " $pipeline_name "|" $step_name
+            - echo $MY_MESSAGE
