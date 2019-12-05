@@ -22,5 +22,5 @@ pipelines:
         execution:
           onExecute:
             - echo "Running " $pipeline_name "|" $step_name
-            - sleep 90s
+            - sleep 60s
             - echo $MY_MESSAGE
