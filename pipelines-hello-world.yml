@@ -13,11 +13,12 @@ pipelines:
       environmentVariables:
         readOnly:
           MY_MESSAGE: '"Hello World!"'
-      inputResources:
-            - name: jfrogtw_hw_repo
     steps:
       - name: step_1
         type: Bash
+        configuration:
+          inputResources:
+            - name: jfrogtw_hw_repo
         execution:
           onExecute:
             - echo "Running " $pipeline_name "|" $step_name
