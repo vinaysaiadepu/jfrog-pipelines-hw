@@ -22,7 +22,7 @@ pipelines:
         execution:
           onExecute:
             - echo "Running " $pipeline_name "|" $step_name
-            - sleep 60s
+            - sleep 15s
             - echo $MY_MESSAGE
 
       - name: step_2
@@ -33,6 +33,7 @@ pipelines:
         execution:
           onExecute:
             - echo "Running " $pipeline_name "|" $step_name
+            - echo $res_jfrogtw_hw_repo_resourcePath
             - echo $MY_MESSAGE
 
       - name: step_3
