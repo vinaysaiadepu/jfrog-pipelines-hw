@@ -22,6 +22,9 @@ pipelines:
         execution:
           onExecute:
             - echo "Running " $pipeline_name "|" $step_name
+            - echo $res_jfrogtw_hw_repo_resourcePath
+            - echo $res_jfrogtw_hw_repo_gitProvider_name
+            - echo $res_jfrogtw_hw_repo_commitSha
             - sleep 15s
             - echo $MY_MESSAGE
 
@@ -33,9 +36,6 @@ pipelines:
         execution:
           onExecute:
             - echo "Running " $pipeline_name "|" $step_name
-            - echo $res_jfrogtw_hw_repo_resourcePath
-            - echo $res_jfrogtw_hw_repo_gitProvider_name
-            - echo $res_jfrogtw_hw_repo_commitSha
             - echo $MY_MESSAGE
 
       - name: step_3
