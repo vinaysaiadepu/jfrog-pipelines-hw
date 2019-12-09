@@ -25,7 +25,7 @@ pipelines:
             - echo $res_jfrogtw_hw_repo_resourcePath
             - echo $res_jfrogtw_hw_repo_gitProvider_name
             - echo $res_jfrogtw_hw_repo_commitSha
-            - sleep 15s
+            - sleep 5s
             - echo $MY_MESSAGE
 
       - name: step_2
