@@ -42,7 +42,7 @@ pipelines:
         type: Bash
         configuration:
           inputSteps:
-            - name: step_1
+            - name: step_2
         execution:
           onExecute:
             - echo "Running " $pipeline_name "|" $step_name
@@ -52,7 +52,7 @@ pipelines:
         type: Bash
         configuration:
           inputSteps:
-            - name: step_2
+#            - name: step_2
             - name: step_3
         execution:
           onExecute:
