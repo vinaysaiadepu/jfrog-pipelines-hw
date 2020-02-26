@@ -22,7 +22,7 @@ pipelines:
         execution:
           onExecute:
             - echo $MY_MESSAGE
-            - echo Running $pipeline_name | $step_name on node ID $step_node_id
+            - echo Running $pipeline_name : $step_name on node ID $step_node_id
             - add_run_variables current_runid=$run_id
             - echo Previous run ID is $prev_runid
             - echo Current run ID is $current_runid
@@ -38,7 +38,7 @@ pipelines:
         execution:
           onExecute:
             - echo $MY_MESSAGE
-            - echo Running $pipeline_name | $step_name on node ID $step_node_id
+            - echo Running $pipeline_name : $step_name on node ID $step_node_id
 
       - name: step_3
         type: Bash
@@ -48,7 +48,7 @@ pipelines:
         execution:
           onExecute:
             - echo $MY_MESSAGE
-            - echo Running $pipeline_name | $step_name on node ID $step_node_id
+            - echo Running $pipeline_name : $step_name on node ID $step_node_id
 
       - name: step_4
         type: Bash
@@ -59,6 +59,6 @@ pipelines:
         execution:
           onExecute:
             - echo $MY_MESSAGE
-            - echo Running $pipeline_name | $step_name on node ID $step_node_id
+            - echo Running $pipeline_name : $step_name on node ID $step_node_id
             - add_pipeline_variables prev_runid=$run_id            
             - echo $current_runid Completed
