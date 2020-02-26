@@ -21,12 +21,14 @@ pipelines:
             - name: jfrogtw_hw_repo
         execution:
           onExecute:
-            - echo "Running " $pipeline_name "|" $step_name
+            - echo $MY_MESSAGE
+            - echo "Running " $pipeline_name "|" $step_name "on node ID" $step_node_id
+            - add_run_variables current_runid=$run_id
+            - echo "Previous run ID is $prev_runid"
+            - echo "Current run ID is $current_runid
             - echo $res_jfrogtw_hw_repo_resourcePath
             - echo $res_jfrogtw_hw_repo_gitProvider_name
             - echo $res_jfrogtw_hw_repo_commitSha
-            - sleep 5s
-            - echo $MY_MESSAGE
 
       - name: step_2
         type: Bash
@@ -35,26 +37,28 @@ pipelines:
             - name: step_1
         execution:
           onExecute:
-            - echo "Running " $pipeline_name "|" $step_name
             - echo $MY_MESSAGE
+            - echo "Running " $pipeline_name "|" $step_name "on node ID" $step_node_id
 
       - name: step_3
         type: Bash
         configuration:
           inputSteps:
-            - name: step_2
+            - name: step_1
         execution:
           onExecute:
-            - echo "Running " $pipeline_name "|" $step_name
             - echo $MY_MESSAGE
+            - echo "Running " $pipeline_name "|" $step_name "on node ID" $step_node_id
 
       - name: step_4
         type: Bash
         configuration:
           inputSteps:
-#            - name: step_2
+            - name: step_2
             - name: step_3
         execution:
           onExecute:
-            - echo "Running " $pipeline_name "|" $step_name
             - echo $MY_MESSAGE
+            - echo "Running " $pipeline_name "|" $step_name "on node ID" $step_node_id
+            - add_pipeline_variables prev_runid=$run_id            
+            - echo $current_runid Completed
