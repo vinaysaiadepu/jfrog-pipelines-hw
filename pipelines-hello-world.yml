@@ -25,7 +25,7 @@ pipelines:
             - echo "Running " $pipeline_name "|" $step_name "on node ID" $step_node_id
             - add_run_variables current_runid=$run_id
             - echo "Previous run ID is $prev_runid"
-            - echo "Current run ID is $current_runid
+            - echo "Current run ID is $current_runid"
             - echo $res_jfrogtw_hw_repo_resourcePath
             - echo $res_jfrogtw_hw_repo_gitProvider_name
             - echo $res_jfrogtw_hw_repo_commitSha
