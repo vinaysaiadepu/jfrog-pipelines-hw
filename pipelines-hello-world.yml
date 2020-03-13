@@ -1,11 +1,11 @@
 resources:
-  - name: jfrogtw_hw_repo
+  - name: myAppRepo
     type: GitRepo
     configuration:
-      gitProvider: twgithub
+      gitProvider: myGitHub
       path: jfrogtw/jfrog-pipelines-hw
       branches:
-        include: master
+        include: demo
         
 pipelines:
   - name: pipeline_hello_world
@@ -18,7 +18,7 @@ pipelines:
         type: Bash
         configuration:
           inputResources:
-            - name: jfrogtw_hw_repo
+            - name: myAppRepo
         execution:
           onExecute:
             - echo $MY_MESSAGE
@@ -26,9 +26,9 @@ pipelines:
             - add_run_variables current_runid=$run_id
             - echo Previous run ID is $prev_runid
             - echo Current run ID is $current_runid
-            - echo $res_jfrogtw_hw_repo_resourcePath
-            - echo $res_jfrogtw_hw_repo_gitProvider_name
-            - echo $res_jfrogtw_hw_repo_commitSha
+            - echo $res_myAppRepo_resourcePath
+            - echo $res_myAppRepo_gitProvider_name
+            - echo $res_myAppRepo_commitSha
 
       - name: step_2
         type: Bash
