@@ -2,7 +2,7 @@ resources:
   - name: jfrogtw_hw_repo
     type: GitRepo
     configuration:
-      gitProvider: tw_github
+      gitProvider: MyGitHub
       path: jfrogtw/jfrog-pipelines-hw
       branches:
         include: master
